@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  div {
+    width: 400px;
+    height: 500px;
+    background-color: pink;
+    background-image: url(../image/l.jpg);
+    background-repeat: no-repeat; /*平铺*/
+/*    1.利用方位名词*/
+  /*  利用方位名词 top bottom 来更改背景图片的位置*/
+    /* background-position: left top;  默认是左上角*/
+    /*background-position: right bottom;  方位名词是没有顺序的，谁在前都一样，right bottom 和 bottom right 效果一样的 */
+    /*background-position: left; 如果方位名词只写一个，另外一个默认为center(居中)*/
+
+   /*2.精确单位 第一值一定是x坐标 第二个值一定是y坐标*/
+    /*background-position: 10px 10px;*/
+    /* 3. 混搭*/
+    background-position: center 10px;
+/*    center 10px 水平是居中，垂直是10px
+    10px center  水平是10px，垂直是居中*/
+
+
+  }
+</style>
+<body>
+  <div></div>
+</body>
+</html>

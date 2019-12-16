@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 未访问的链接 */
+      a:link {
+          font-size: 16px;
+          color: orchid;
+          font-weight: 700;
+      }
+      /* 已访问过得链接 */
+      a:visited {
+        color: orange;
+      }
+      /* 鼠标移动到链接上 */
+      a:hover {  
+          color: red;
+      }
+      /* 选定的链接，当我们点击别松开鼠标，显示的状态 */
+      a:active {
+          color: green;
+      }
+  /* 顺序不能乱写，必须按这个顺序写 */
+    </style>
+</head>
+<body>
+    <!-- 伪类选择器其中的 链接伪类选择器 主要正对与 a-->
+    <div>
+        <a href="132">秒杀</a>
+        <a href="#">闪购</a>
+    </div>
+</body>
+</html>

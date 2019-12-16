@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+ /*   连接登录 的颜色为红色，同时主导航栏里面的所有连接改为蓝色 （简单）*/
+    .nav a{
+      color: blue;
+    }
+    .site-r a{
+      color: red;
+    }
+    /*主导航和侧边导航栏里面的文字都是14像素并且是微软雅黑（中等）*/
+    .nav, .sitenav{
+      /*font-size: 14px;
+      font-family: "微软雅黑";*/
+      font: 14px "microsoft yahei";
+
+    }
+
+   /*  主导航栏里面的一级菜单连接文字颜色为绿色（难）*/
+    .nav > ul >li > a {
+      color: chartreuse;
+    }
+  </style>
+</head>
+<body>
+<!--需求:
+1、连接 登录 的颜色为红色，同时主导航栏里面的所有连接改为蓝色 （简单）
+
+2、主导航和侧边导航栏里面的文字都是14像素并且是微软雅黑（中等）
+3、主导航栏里面的一级菜单连接文字颜色为绿色（难）-->
+
+<!--主导航栏-->
+<div class="nav">
+  <ul>
+    <li><a href="#">公司首页</a></li>
+    <li><a href="#">公司简介</a></li>
+    <li><a href="#">公司产品</a></li>
+    <li><a href="#">联系我们</a>
+      <ul>
+        <li><a href="#">公司邮箱</a></li>
+        <li><a href="#">公司电话</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!--侧边导航栏-->
+  <div class="sitenav">
+    <div class="site-l">左侧测导航栏</div>
+    <div class="site-r"><a href="#">登录</a></div>
+  </div>
+</body>
+</html>
