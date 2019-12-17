@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #father #son { /*权重为 0，2，0，0  权重最高*/
+      color: blue;
+    }
+    #father p.c2 {/*权重为 0，1，1，1*/
+      color: black;
+    }
+    div.c1 p.c2 {
+      color: red;
+    }
+    #father {
+      color: green; !important;   /*继承的权重为0*/
+    }
+  </style>
+</head>
+<body>
+<div id="father" class="c1">
+  <p id="son" class="c2">
+    试问这行字体是什么颜色的？
+  </p>
+</div>
+</body>
+</html>

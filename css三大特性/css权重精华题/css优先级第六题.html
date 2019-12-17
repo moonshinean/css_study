@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .c1 .c2 div {/*权重为 0，0，2，1*/
+      color: blue;
+    }
+    div #box3 { /* 权重为 0，1，0，1 */
+      color: green;
+    }
+    /* 注意 此处不涉及继承，如果标签不指定到文字那一层标签就是继承，指定到文字显示的标签就正常计算优先级*/
+    #box1 div { /*权重为 0，1，0，1 离标签越近就优先级越高*/
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+<div class="c1" id="box1">
+  <div class="c2" id="box2">
+    <div class="c3" id="box3">
+      文字
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+     li { /*  权重 0,0,0,1*/
+       color: red;
+      }
+      ul li { /*ul 0001 li 0001  叠加之后的权重为 0,0,0,2*/
+        color: #ffff66;
+      }
+      nav ul li {/* 叠加之后的权重为 0,0,0,3*/
+        color: hotpink;
+      }
+      .daohang ul li { /* 叠加之后的权重为 0,0,1,2*/
+        color: skyblue;
+      }
+  </style>
+</head>
+<body>
+<nav class="daohang">
+  <ul>
+    <li>李白</li>
+    <li>程咬金</li>
+    <li>鲁班1号</li>
+  </ul>
+</nav>
+</body>
+</html>
