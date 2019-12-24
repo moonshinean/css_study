@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <title>Title</title>
+  <script src="https://libs.cdnjs.net/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<select  onchange="func()" id="test">
+  <option value ="1">自由诗</option>
+  <option value ="2">带押韵的自由诗</option>
+<!--  <option value="3">藏头诗</option>-->
+  <option value="4">给定若干字，以最大概率生成诗</option>
+</select>
+<input type="text" id="style">
+<button id="btn" style="width: 6vw;background: green">作诗</button>
+</br>
+</br>
+<textarea id="text" cols="23" rows="20"></textarea>
+</body>
+<script type="text/javascript">
+    var type;
+    func = function (){
+      type = $('#test').val()
+  };
+  $('#btn').click(function () {
+      // var  type = $('#type').val();
+     var style = $('#style').val();
+      $.ajax({
+          type: "GET",
+          url: "http://127.0.0.1:5000/poem?style=" + type + '&start=' +style,
+          // dataType: "jsonp",
+          // jsonp: "callback",   //默认不写前后端约定的名称是 callback
+          // cache: true,
+          success: function(data){
+              $('#text').text(data)
+          }
+      })
+  })
+</script>
+</html>

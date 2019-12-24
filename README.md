@@ -644,16 +644,89 @@ dashed:     边框为虚线
 dotted:     边框为点线
 double:     边框为双实线
 ```
-表格的细线边框
 
-以前学过的html边框很粗，这里只需要css一句话就可以美观起来。让我们真的相信, css就是我们的白马王子(白雪公主)。
-table{border-collapse:collapse}
-
-#### 盒子边框写法总结表
+#### 3.1、盒子边框写法总结表
 
 |设置内容| 属性样式| 常用属性值|
 |:---:|:---:|:---:|
 |上边框|border-top-style: 样式;border-top-width: 宽度,border-top-color: 颜色，border-top: 宽度 样式 颜色；| |
 |下边框|border-bottom-style: 样式;border-bottom-width: 宽度,border-bottom-color: 颜色，border-bottom: 宽度 样式 颜色；| |
 |左边框|border-left-style: 样式;border-left-width: 宽度,border-left-color: 颜色，border-left: 宽度 样式 颜色；| |
- 
+|右边框|border-right-style: 样式;border-right-width: 宽度,border-right-color: 颜色，border-right: 宽度 样式 颜色；| |
+|样式综合设置|border-style: 上边[右边 下边 左边];| none无(默认)、solid单实线、dashed虚线、dotted点线、double双实线 |
+|宽度综合设置|border-width: 上边[右边 下边 左边];| 像素值|
+|颜色综合设置|border-color: 上边[右边 下边 左边];| 颜色值、#十六进制、rgb(r,g,b)、rgb(r%,g%,b%)|
+|边框综合设置|border: 四边宽度 四边样式 四边颜色;| |
+
+#### 3.2、表格的细线边框
+
+以前学过的html边框很粗，这里只需要css一句话就可以美观起来。让我们真的相信, css就是我们的白马王子(白雪公主)。
+table{border-collapse:collapse},collapse单词是合并的意思
+
+border-collapse:collapse; 表示边框合并在一起。
+
+#### 3.3、圆角边框(css)
+从此以后，我们的世界不只有矩形。radius(半径距离)
+
+语法格式：   
+```
+border-radius: 左上角 右上角 右下角 左下角;
+```
+### 4、内边距(padding)
+padding属性用于设置内边距。是指边框与内容之间的距离。
+
+padding-top: 上内边距   
+padding-right： 右内边距
+padding-bottom： 下内边距
+padding-left： 左内边距
+
+注意： 后面跟着几个数值表示的意思不一样的。
+
+|值得个数|表达意思|
+|:---:|:---:|
+|1个值|padding: 上下左右边距 比如 padding：3px;表示上下左右都是3像素|
+|2个值|padding: 上下边距 左右边距 比如 padding：3px 5px;表示上下3像素 左右是5像素|
+|3个值|padding: 上边距 左右边距 下边距 比如 padding：3px 5px 10px;表示上是3像素 左右是5像素 下是10px|
+|4个值|padding: 上边距 左边距 右边距 下边距 比如 padding：3px 5px 10px 15px;表示上是3像素 右是5像素 下是10像素 做是15像素(顺时针)|
+
+### 5、外边距(margin)
+margin属性同于设置外边距。设置外边距会在元素之间创建"空白"，这段空白通常不能放置其他内容。   
+
+margin-top：上外边距   
+margin-right：右外边距   
+margin-bottom：下外边距   
+margin-left：左外边距   
+margin：上外边距 右外边距 下外边距 左外边距    
+取值顺序跟内边距相同
+
+#### 外边距实现盒子居中
+可以往一个盒子实现水平居中，需要满足以下两个条件:
+ 1. 必须是块级元素。
+ 2. 盒子必须指定了宽度(width)。
+
+然后就给**左右的外部边距设置为auto**，就可以使块级元素水平居中。 
+实际工作中常用的这种方式进行网页布局，示例代码如下：
+```
+.header {
+  width:960px;
+  margin: 0 auto
+}
+```  
+注意：此处居中只针对于块级元素，行内元素以及行内块元素都是无效的。
+
+#### 清除元素的默认内边距
+为了方便的控制网页中的元素，制作网页时，可以用如下代码清除元素的默认内外边距。
+```
+* {
+   margin: 0, 清除外边距
+   padding: 0, 清除内边距
+}
+```
+注意： 行内元素是只有左右内外边距的，是没有上下内外边距的。我们尽量不要给行内元素指定上下的内外边距就好了
+
+### 6、外边距合并
+使用margin 定义元素的垂直外边距时，可能会出现外边距的合并。
+#### 相邻块级元素垂直外边距的合并
+当上下相邻的朗格块级元素相遇时，如果上面的元素有下外边距 maigin-bottom ，下面的元素有上外边距margin-top，则他们之间的垂直距离不是margin-bottom 与margin-top之和，而是两者中较大者。
+这种现象被称为相邻块级元素垂直外边的合并。(也称为外边距塌陷)。
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+     div {
+       width: 200px;
+       height: 200px;
+       border: 1px solid red;
+     }
+    div:first-child {
+      border-radius: 10px; /*表示四个角的圆角*/
+    }
+    div:nth-child(2) {
+      /*border-radius: 100px; 取款度和高度的一半 则会变成一个圆形*/
+      border-radius: 50%; /*100px 50% 去高度和宽度的一半  则会变成一个圆形*/
+    }
+    div:nth-child(3) {
+      border-radius: 10px 40px; /*左上角  和 右下角 是10px 右上角 左下角 40px 对角线*/
+    }
+    div:nth-child(4) {
+      border-radius: 10px 40px 80px;/*左上角 10px 右上角与左下角 20px 右下角80px*/
+    }
+    div:nth-child(5){
+      border-radius: 10px 40px 80px 100px;/*左上角 10px 右上角 40px 右下角 80px 左下角 100px*/
+    }
+    div:nth-child(6) {
+      border-radius: 100px 0;
+    }
+    div:nth-child(7) {
+      border-radius: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

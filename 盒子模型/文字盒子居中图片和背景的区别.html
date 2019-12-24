@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid pink;
+      text-align: center;/*设置文字水平居中*/
+      margin: 10px auto;/*盒子水平居中 左右margin 改为 auto 就可以了*/
+    }
+    section img { /*插入图片更改大小 width 和 height*/
+      border: 1px solid #000;
+      width: 100px;
+      height: 100px;
+      margin-top: 30px; /*插入图片更改位置 可以用margin 和 padding 盒模型*/
+      margin-left: 50px;/*插入图片也是一个盒子*/
+    }
+    aside {
+      width: 300px;
+      height: 300px;
+      border: 1px solid pink;
+      background: #fff url(../image/sun.jpg) no-repeat;
+      background-size: 150px;/*背景图片更改大小只能用 background-size*/
+      background-position: 20px 50px; /*背景图片更改位置只能用 background-position*/
+    }
+  </style>
+</head>
+<body>
+1.文字水平居中和盒子水平居中区别
+ <div>文字水平居中</div>
+2.插入图片和背景图片的区别
+ <section>
+   <img src="../image/sun.jpg" alt="">123
+ </section>
+
+<aside>
+12312
+</aside>
+
+3.一般情况，下背景图片适合做一些小图标使用
+  产品展示之类的就用插入图片
+</body>
+</html>

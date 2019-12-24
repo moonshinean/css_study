@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /*margin-top: 100px; !*盒子距离顶部100px*!
+      margin-left: 50px;!*盒子距离左边50px*!*/
+      margin: 30px auto;/*上下30px 左右 auto 自动 这样可以让让块级带有宽度的盒子水平居中对齐*/
+    }
+    header, span {
+      width: 900px;
+      height: 120px;
+      background-color: #000;
+      margin: 0 auto;/*左右一定是auto就是可以居中的  正对行内元素和行内块元素都是无效的  除非是块级元素*/
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+   <div></div>
+   <header>头部标签</header>
+   <span>123</span>
+</body>
+</html>
