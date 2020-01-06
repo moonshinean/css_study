@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
   <title>Title</title>
   <script src="https://libs.cdnjs.net/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -20,13 +19,15 @@
 <textarea id="text" cols="23" rows="20"></textarea>
 </body>
 <script type="text/javascript">
-    var type;
-    func = function (){
+  console.log($);
+   var type = '1';
+  func = function (){
       type = $('#test').val()
   };
   $('#btn').click(function () {
       // var  type = $('#type').val();
      var style = $('#style').val();
+     console.log(type);
       $.ajax({
           type: "GET",
           url: "http://127.0.0.1:5000/poem?style=" + type + '&start=' +style,
