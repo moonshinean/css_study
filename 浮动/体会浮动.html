@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      /* display: inline-block;  转变为行内块元素， 就可以将三个div显示在一行
+      但是盒子之间有缝隙，不方便处理*/
+      float: left;/* 通过浮动将三个盒子并排在一起  左侧浮动*/
+    }
+    div:nth-child(2) {
+      background: hotpink;
+    }
+    div:last-child {
+      background: deeppink;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

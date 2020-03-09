@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div:first-child {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      box-sizing: content-box; /*就是以前的标准的盒模型 W3C盒子*/
+      padding: 10px;
+      border: 15px solid red;
+      /*盒子大小为width + padding + border  content-box: 此值为默认值，
+      其让元素维持W3C的标准Box Mode。 */
+    }
+    div:last-child {
+      width: 200px;
+      height: 200px;
+      background: #FF8400;
+      box-sizing: border-box;/*padding border 不撑开盒子*/
+      padding: 10px;
+      /*margin: 10px;*/
+      border: 15px solid red;
+      /*盒子大小为width,也就是说padding和border都会包含在width里面。*/
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+</html>

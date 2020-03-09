@@ -763,5 +763,87 @@ width和height的属性指可以为不同的单位的数值或相对于父元素
 ```
 width > padding > margin
 ```
-原因: 
-  1.margin会有外边距合并 还有ie6下面margin加倍的bug(讨厌),所以最后使用。
+原因:   
+  1.margin会有外边距合并 还有ie6下面margin加倍的bug(讨厌),所以最后使用。    
+  2.padding会影响盒子较小，需要进行加减计算(麻烦)，其次使用。 
+  3.width 没有问题(嗨皮) 我们经常使用宽度剩余法，高度剩余法来做。
+
+### css3盒模型
+  css3可以通过box-sizing来指定盒模型，既可指定为content-box、border-box，这样我们计算大小的方式就发生了改变。
+  可以分成两种情况：
+   1. box-sizing:content-box 盒子大小为width + padding + border  content-box: 此值为默认值，其让元素维持W3C的标准Box Mode。 
+   2. box-sizing:border-box 盒子大小为width,也就是说padding和border都会包含在width里面。
+  >注意：上面的标注的width指的是css属性里设置的width；length、content的值是会自动调整的。
+```
+ div:first-child {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      box-sizing: content-box; /*就是以前的标准的盒模型 W3C盒子*/
+      padding: 10px;
+      border: 15px solid red;
+      /*盒子大小为width + padding + border  content-box: 此值为默认值，
+      其让元素维持W3C的标准Box Mode。 */
+    }
+    div:last-child {
+      width: 200px;
+      height: 200px;
+      background: #FF8400;
+      box-sizing: border-box;/*padding border 不撑开盒子*/
+      padding: 10px;
+      /*margin: 10px;*/
+      border: 15px solid red;
+      /*盒子大小为width,也就是说padding和border都会包含在width里面。*/
+    }
+```
+### 盒子阴影
+语法格式:   
+> box-shadow：水平阴影 垂直阴影 模糊距离 阴影尺寸 阴影颜色 内/外阴影;     
+
+|值|描述|
+|:---:|:---:|
+|h-shadow|必须，水平阴影的位置，允许负值|
+|v-shadow|必须，垂直阴影的位置，允许负值|
+|blur|可选，模糊距离|
+|spread|可选，阴影尺寸|
+|color|可选，阴影颜色|
+|inset|可选，将外部阴影(outset)改成内部阴影|
+
+1. 前两个属性是必须写的。其余的可以省略
+2. 外阴影（outset）,不能写 是默认的 想要内阴影inset
+```
+ img {
+    border：10px solid orange;
+    box-shadow: 3px 3px 5px 4px rgba(0,0,0,1);
+}
+```
+### 浮动(float)
+#### 普通流(normal flow)
+前面我们说过，网页布局的核心，就是用css来摆放盒子位置。如何把盒子摆放到合适的位置？
+css的定位机制有三种，普通流(标准流)、浮动和定位。   
+
+html语言当中另外一个相当重要的概念----标准流！或者普通流，或者文档流。普通流实际上就是一个网页标签元素正常从上到下，
+从左到右排列顺序的意思，比如块级元素会独占一行，行内元素会按顺序依次前后排列；按照这种大小前提的布局排列之下 绝对不会出现例外的情况叫做普通流布局。
+
+####浮动(float)
+浮动最早是用来控制图片，以便达到其他元素(特别是文字)实现"环绕"图片的效果。
+后来，我们发现浮动有个很有意思的事情，就是让任何盒子可以一行排列，因此我们就可慢慢的偏离主题，
+用浮动的特性来布局了。(css3已经我们真正意义上的网页布局，具体css3我们会详细解释)
+![attr](image/img_11.jpg)
+#### 什么是浮动？
+元素的浮动是值设置了浮动属性的元素会脱离标准普通标准流的控制，移动到其父元素的中指定位置的过程。   
+在css中，通过float属性来定义浮动，其基本语法格式如下：
+```
+ 选择器{float: 属性值；}
+```
+
+|属性值|描述|
+|:---:|:---:|
+|left|元素向左浮动|
+|right|元素向右浮动|
+|none|元素不浮动(默认)|
+#### 浮动详细内幕特性
+```
+浮动首先船舰包含块的概念（包裹）。就是说，浮动的元素总是找离它最近的父元素对齐。
+但是不会超出内边距的范围。
+```
